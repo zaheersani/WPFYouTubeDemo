@@ -8,7 +8,7 @@
         Title="First WPF App" Height="133.333" Width="262">
     <Grid>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="66,17,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontFamily="Microsoft New Tai Lue" FontSize="16"/>
-        <Label Content="Name: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,13,0,0" FontFamily="Microsoft New Tai Lue" FontSize="16"/>
+        <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,13,0,0" FontFamily="Microsoft New Tai Lue" FontSize="16"/>
         <Button x:Name="btnShow" Content="Show Me" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="111,45,0,0" FontFamily="Microsoft New Tai Lue" FontSize="16" Click="btnShow_Click"/>
 
     </Grid>
