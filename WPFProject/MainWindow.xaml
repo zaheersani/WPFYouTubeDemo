@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="First WPF App" Height="133.333" Width="262">
+    <Grid>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="66,17,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontFamily="Microsoft New Tai Lue" FontSize="16"/>
+        <Label Content="Name: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,13,0,0" FontFamily="Microsoft New Tai Lue" FontSize="16"/>
+        <Button x:Name="btnShow" Content="Show Me" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="111,45,0,0" FontFamily="Microsoft New Tai Lue" FontSize="16" Click="btnShow_Click"/>
+
+    </Grid>
+</Window>
