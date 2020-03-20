@@ -25,9 +25,32 @@ namespace WPFProject
             InitializeComponent();
         }
 
-        private void btnShow_Click(object sender, RoutedEventArgs e)
+        private void btnOperation_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Your Name: " + this.txtName.Text);
+            int num1 = int.Parse(this.txtNum1.Text);
+            int num2 = int.Parse(this.txtNum2.Text);
+            Button op;
+            int result = 0;
+            if(sender is Button)
+            {
+                op = (Button)sender;
+                if (op == btnSum)
+                    //MessageBox.Show(num1 + "+" + num2 + "=" + (num1 + num2));
+                    result = num1 + num2;
+                else if (op == btnSub)
+                    //MessageBox.Show(num1 + "-" + num2 + "=" + (num1 - num2));
+                    result = num1 - num2;
+                else if (op == btnMult)
+                    //MessageBox.Show(num1 + "x" + num2 + "=" + (num1 * num2));
+                    result = num1 * num2;
+                else if (op == btnDiv)
+                    result = num1 / num2;
+                //MessageBox.Show(num1 + "/" + num2 + "=" + (num1 / num2));
+                this.lblResult.Content = result;
+            }
+            
+            // 5 + 6 = 11
+            //MessageBox.Show(num1 + "+" + num2 + "=" + (num1 + num2));
         }
     }
 }
