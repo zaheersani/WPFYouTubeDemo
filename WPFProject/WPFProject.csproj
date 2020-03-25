@@ -73,6 +73,9 @@
     <Compile Include="WPFCommonControls.xaml.cs">
       <DependentUpon>WPFCommonControls.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPFDataBinding.xaml.cs">
+      <DependentUpon>WPFDataBinding.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WPFCommonControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFDataBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
