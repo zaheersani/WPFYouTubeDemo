@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPFProject.WPFCommonControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="WPFCommonControls" Height="450" Width="800">
+    <Grid>
+        <CheckBox Content="C#" HorizontalAlignment="Left" Margin="27,30,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Python" HorizontalAlignment="Left" Margin="73,30,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Java" HorizontalAlignment="Left" Margin="135,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="Skills/Languages" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,4,0,0" Width="120"/>
+        <Label Content="Gender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,49,0,0" Width="120"/>
+        <Label Content="Availability" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,95,0,0" Width="120"/>
+        <Grid x:Name="gridGender" HorizontalAlignment="Left" Height="30" Margin="17,70,0,0" VerticalAlignment="Top" Width="128">
+            <RadioButton Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Margin="8,10,0,0"/>
+            <RadioButton Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,10,0,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="35" Margin="17,121,0,0" VerticalAlignment="Top" Width="180">
+            <RadioButton Content="Full-Time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" IsChecked="True"/>
+            <RadioButton Content="Part-Time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,10,0,0" IsChecked="True"/>
+        </Grid>
+        <ComboBox x:Name="comboCity" HorizontalAlignment="Left" Margin="17,190,0,0" VerticalAlignment="Top" Width="120" IsDropDownOpen="True" IsEditable="True">
+            <ComboBoxItem Content="Islamabad"/>
+            <ComboBoxItem Content="Lahore"/>
+            <ComboBoxItem Content="Karachi"/>
+        </ComboBox>
+        <Label Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,159,0,0" Width="120"/>
+        <ListBox x:Name="listBoxCountry" HorizontalAlignment="Left" Height="100" Margin="155,190,0,0" VerticalAlignment="Top" Width="100">
+            <ListBoxItem Content="Pakistan"/>
+            <ListBoxItem Content="USA"/>
+            <ListBoxItem Content="UK"/>
+        </ListBox>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="180,340,0,0" VerticalAlignment="Top" Width="75" Click="BtnSubmit_Click"/>
+        <Image HorizontalAlignment="Left" Height="95" Margin="215,10,0,0" VerticalAlignment="Top" Width="90" Source="Square_Shape_Logo.png"/>
+        <Calendar x:Name="calendar" HorizontalAlignment="Left" Margin="321,49,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" DisplayMode="Decade" DisplayDate="1993-03-26" SelectionMode="MultipleRange"/>
+        <DatePicker HorizontalAlignment="Left" Margin="523,53,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
