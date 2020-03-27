@@ -76,6 +76,9 @@
     <Compile Include="WPFDataBinding.xaml.cs">
       <DependentUpon>WPFDataBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPFPanels.xaml.cs">
+      <DependentUpon>WPFPanels.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPFDataBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPanels.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
