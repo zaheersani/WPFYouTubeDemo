@@ -1,0 +1,50 @@
+﻿<Window x:Class="WPFProject.WPFMenus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="WPFMenus" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="CommandBindingNew_CanExecute" Executed="CommandBindingNew_Executed" />
+        <CommandBinding Command="Open" CanExecute="CommandBindingOpen_CanExecute" Executed="CommandBindingOpen_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="X" Modifiers="Ctrl" Command="{Binding ExitCommand}" />
+        <KeyBinding Key="W" Modifiers="Ctrl" Command="{Binding WrapCommand}" />
+    </Window.InputBindings>
+
+    <Grid>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="_File" Height="20" Width="30">
+                <MenuItem Command="New" HorizontalAlignment="Left" Height="20" Width="150">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/NewFile.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="Open" HorizontalAlignment="Left" Height="20" Width="150" >
+                    <MenuItem.Icon>
+                        <Image Source="Icons/open.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator HorizontalAlignment="Left" Height="1" Width="140"/>
+                <MenuItem x:Name="MenuItemExit" InputGestureText="Ctrl+X" Header="Exit" HorizontalAlignment="Left" Height="20" Width="150" Click="MenuItemExit_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="Icons/Exit.png" Margin="0,0,0,-3" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edit" Height="20" Width="30">
+                <MenuItem Command="Cut" HorizontalAlignment="Left" Height="20" Width="150"/>
+                <MenuItem Command="Copy" HorizontalAlignment="Left" Height="20" Width="150"/>
+                <MenuItem Command="Paste" HorizontalAlignment="Left" Height="20" Width="150"/>
+            </MenuItem>
+            <MenuItem Header="F_ormat" Height="20" Width="50">
+                <MenuItem Command="{Binding WrapCommand}" InputGestureText="Ctrl+W" Header="Wrap" IsCheckable="True" IsChecked="True" HorizontalAlignment="Left" Height="20" Width="160" />
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="txtBox" Margin="0,20,0,0" TextWrapping="Wrap" Text="" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+
+    </Grid>
+</Window>

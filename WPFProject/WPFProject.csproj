@@ -76,6 +76,9 @@
     <Compile Include="WPFDataBinding.xaml.cs">
       <DependentUpon>WPFDataBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPFMenus.xaml.cs">
+      <DependentUpon>WPFMenus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPFPanels.xaml.cs">
       <DependentUpon>WPFPanels.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPFDataBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFMenus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Square_Shape_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Exit.png" />
+    <Resource Include="Icons\exit_icon.ico" />
+    <Resource Include="Icons\NewFile.png" />
+    <Resource Include="Icons\open.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
