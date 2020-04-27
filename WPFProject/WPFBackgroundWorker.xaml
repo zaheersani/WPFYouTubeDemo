@@ -1,0 +1,16 @@
+﻿<Window x:Class="WPFProject.WPFBackgroundWorker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="WPFBackgroundWorker" Height="250" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="30,71,0,0" VerticalAlignment="Top" Width="235" FontSize="36" FontFamily="Microsoft Tai Le" Click="BtnStart_Click"/>
+        <Label x:Name="lblCounter" Content="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Microsoft Tai Le" Width="272" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Microsoft Tai Le" Width="272" HorizontalContentAlignment="Center"/>
+        <ProgressBar x:Name="progressbar" HorizontalAlignment="Left" Height="32" Margin="0,187,0,0" VerticalAlignment="Top" Width="292"/>
+
+    </Grid>
+</Window>
