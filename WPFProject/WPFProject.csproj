@@ -70,22 +70,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="WPFBackgroundWorker.xaml.cs">
-      <DependentUpon>WPFBackgroundWorker.xaml</DependentUpon>
+    <Compile Include="WPF_6_BackgroundWorker.xaml.cs">
+      <DependentUpon>WPF_6_BackgroundWorker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPFCommonControls.xaml.cs">
-      <DependentUpon>WPFCommonControls.xaml</DependentUpon>
+    <Compile Include="WPF_2_CommonControls.xaml.cs">
+      <DependentUpon>WPF_2_CommonControls.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPFDataBinding.xaml.cs">
-      <DependentUpon>WPFDataBinding.xaml</DependentUpon>
+    <Compile Include="WPF_4_DataBinding.xaml.cs">
+      <DependentUpon>WPF_4_DataBinding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPFMenus.xaml.cs">
-      <DependentUpon>WPFMenus.xaml</DependentUpon>
+    <Compile Include="WPF_7_LINQBasics.xaml.cs">
+      <DependentUpon>WPF_7_LINQBasics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPFPanels.xaml.cs">
-      <DependentUpon>WPFPanels.xaml</DependentUpon>
+    <Compile Include="WPF_5_Menus.xaml.cs">
+      <DependentUpon>WPF_5_Menus.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="WPF_3_Panels.xaml.cs">
+      <DependentUpon>WPF_3_Panels.xaml</DependentUpon>
+    </Compile>
+    <Page Include="WPF_1_BasicCalculator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,27 +96,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="WPF_1_BasicCalculator.xaml.cs">
+      <DependentUpon>WPF_1_BasicCalculator.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WPFBackgroundWorker.xaml">
+    <Page Include="WPF_6_BackgroundWorker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPFCommonControls.xaml">
+    <Page Include="WPF_2_CommonControls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPFDataBinding.xaml">
+    <Page Include="WPF_4_DataBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPFMenus.xaml">
+    <Page Include="WPF_7_LINQBasics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPFPanels.xaml">
+    <Page Include="WPF_5_Menus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF_3_Panels.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

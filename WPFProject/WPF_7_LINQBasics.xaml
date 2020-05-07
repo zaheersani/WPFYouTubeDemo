@@ -1,0 +1,12 @@
+﻿<Window x:Class="WPFProject.WPFLINQBasics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="WPFLINQBasics" Height="400" Width="269" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="lblOutput" Content="Label" Background="#FFE2E1E1" FontSize="14" FontFamily="Microsoft New Tai Lue"/>
+    </Grid>
+</Window>
