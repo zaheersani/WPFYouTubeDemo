@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPFProject.WPF_8_EF_HMS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="Doctors Management" Height="422" Width="624" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="gridDoctors" HorizontalAlignment="Left" Height="129" Margin="10,206,0,0" VerticalAlignment="Top" Width="305" SelectionChanged="GridDoctors_SelectionChanged" />
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="130,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="20,47,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtSpecialization" HorizontalAlignment="Left" Height="23" Margin="130,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="20,78,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtQualification" HorizontalAlignment="Left" Height="23" Margin="130,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="btnAdd" Content="Add" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="218,115,0,0" VerticalAlignment="Top" Width="75" Click="BtnAdd_Click"/>
+        <Button x:Name="btnLoadDoctors" Content="Load Doctors" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Width="130" Click="BtnLoadDoctors_Click"/>
+        <Button x:Name="btnUpdateDoctor" Content="Update Doctor" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="470,328,0,0" VerticalAlignment="Top" Width="123" Click="BtnUpdateDoctor_Click"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="320,210,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="23" Margin="430,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="320,238,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtSpecialization2" HorizontalAlignment="Left" Height="23" Margin="430,242,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="320,269,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="txtQualification2" HorizontalAlignment="Left" Height="23" Margin="430,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="btnDeleteDoctor" Content="Delete Doctor" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="200,340,0,0" VerticalAlignment="Top" Width="115" Click="BtnDeleteDoctor_Click"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="320,299,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue" Width="103"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="430,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+    </Grid>
+</Window>

@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -50,8 +50,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +80,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>HospitalManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <DependentUpon>HospitalManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManagementDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalManagementDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManagementDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalManagementDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalManagementDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <DependentUpon>HospitalManagementDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="WPF_6_BackgroundWorker.xaml.cs">
       <DependentUpon>WPF_6_BackgroundWorker.xaml</DependentUpon>
     </Compile>
@@ -87,6 +121,12 @@
     </Compile>
     <Compile Include="WPF_3_Panels.xaml.cs">
       <DependentUpon>WPF_3_Panels.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF_8_EF_HMS.xaml.cs">
+      <DependentUpon>WPF_8_EF_HMS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF_9_RelationalDB.xaml.cs">
+      <DependentUpon>WPF_9_RelationalDB.xaml</DependentUpon>
     </Compile>
     <Page Include="WPF_1_BasicCalculator.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +164,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF_8_EF_HMS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF_9_RelationalDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -143,6 +191,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="HospitalManagementDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HospitalManagementDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HospitalManagementDB.edmx.diagram">
+      <DependentUpon>HospitalManagementDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,6 +227,28 @@
     <Resource Include="Icons\exit_icon.ico" />
     <Resource Include="Icons\NewFile.png" />
     <Resource Include="Icons\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HospitalManagementDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalManagementDB.edmx</DependentUpon>
+      <LastGenOutput>HospitalManagementDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HospitalManagementDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HospitalManagementDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalManagementDB.edmx</DependentUpon>
+      <LastGenOutput>HospitalManagementDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="HospitalManagementDB_log.ldf">
+      <DependentUpon>HospitalManagementDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HospitalManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorID" Type="int" />
+          <Property Name="PatientID" Type="int" />
+          <Property Name="AppointmentDate" Type="datetime" />
+          <Property Name="AppointmentTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="Specialization" Type="varchar" MaxLength="50" />
+          <Property Name="Qualification" Type="varchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <Association Name="FK_Table_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalManagementDBModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Table_Doctor" Association="Self.FK_Table_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Appointment" EntitySet="Appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_Patient" Association="Self.FK_Table_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Appointment" EntitySet="Appointment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HospitalManagementDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <NavigationProperty Name="Appointments" Relationship="HospitalManagementDBModel.FK_Table_Doctor" FromRole="Doctor" ToRole="Appointment" />
+        </EntityType>
+        <EntityContainer Name="HospitalManagementDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+          <EntitySet Name="Appointments" EntityType="HospitalManagementDBModel.Appointment" />
+          <EntitySet Name="Patients" EntityType="HospitalManagementDBModel.Patient" />
+          <AssociationSet Name="FK_Table_Doctor" Association="HospitalManagementDBModel.FK_Table_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Appointment" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_Patient" Association="HospitalManagementDBModel.FK_Table_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Appointment" EntitySet="Appointments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorID" Type="Int32" />
+          <Property Name="PatientID" Type="Int32" />
+          <Property Name="AppointmentDate" Type="DateTime" Precision="3" />
+          <Property Name="AppointmentTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Doctor" Relationship="HospitalManagementDBModel.FK_Table_Doctor" FromRole="Appointment" ToRole="Doctor" />
+          <NavigationProperty Name="Patient" Relationship="HospitalManagementDBModel.FK_Table_Patient" FromRole="Appointment" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <NavigationProperty Name="Appointments" Relationship="HospitalManagementDBModel.FK_Table_Patient" FromRole="Patient" ToRole="Appointment" />
+        </EntityType>
+        <Association Name="FK_Table_Doctor">
+          <End Type="HospitalManagementDBModel.Doctor" Role="Doctor" Multiplicity="0..1" />
+          <End Type="HospitalManagementDBModel.Appointment" Role="Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_Patient">
+          <End Type="HospitalManagementDBModel.Patient" Role="Patient" Multiplicity="0..1" />
+          <End Type="HospitalManagementDBModel.Appointment" Role="Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HospitalManagementDBModelStoreContainer" CdmEntityContainer="HospitalManagementDBEntities">
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="HospitalManagementDBModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="HospitalManagementDBModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="AppointmentTime" ColumnName="AppointmentTime" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="HospitalManagementDBModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
